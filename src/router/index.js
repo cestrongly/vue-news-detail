@@ -31,4 +31,20 @@ const router = new VueRouter({
   routes
 })
 
+router.beforeEach((to, from, next) => {
+  console.log('全局前置守卫')
+  console.log(to)
+  console.log(from)
+  console.log(next)
+  debugger
+  next()
+})
+
+router.afterEach((to, from) => {
+  console.log('全局后置钩子')
+  console.log(to)
+  console.log(from)
+  debugger
+})
+
 export default router
